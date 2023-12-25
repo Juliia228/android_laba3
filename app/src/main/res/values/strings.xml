@@ -2,6 +2,7 @@
     <string name="app_name">News feed</string>
     <string name="search_hint">Enter a topic or keyword</string>
     <string name="author">Author:</string>
+    <string name="categ">Category:</string>
     <string name="description">Description:</string>
     <string name="articTitle">Title:</string>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
     <EditText
         android:id="@+id/search"
@@ -22,12 +22,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +41,19 @@
         android:layout_height="45dp"
         android:layout_marginEnd="20dp"
         android:foregroundGravity="center_horizontal"
+        android:src="@android:drawable/ic_search_category_default"
         app:layout_constraintBottom_toBottomOf="@+id/search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/search"
-        app:srcCompat="@android:drawable/ic_search_category_default" />
+        app:layout_constraintTop_toTopOf="@+id/search" />
+
+    <TextView
+        android:id="@+id/emptyList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerV" />
 </androidx.constraintlayout.widget.ConstraintLayout>
