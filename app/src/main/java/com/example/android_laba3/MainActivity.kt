@@ -70,7 +70,7 @@ class MainActivity: Activity() {
             emptyListOfNews(false)
             myAdapter.updateData(null)
             myAdapter.notifyDataSetChanged()
-            Toast.makeText(applicationContext, "Произошла ошибка. Проверьте интернет-подключение", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "An error has occurred. Check your internet connection", Toast.LENGTH_SHORT).show()
         })
 
         queue.add(request)

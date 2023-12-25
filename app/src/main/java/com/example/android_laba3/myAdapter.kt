@@ -35,7 +35,7 @@ class myAdapter(var data: JSONObject?): RecyclerView.Adapter<myAdapter.MyViewHol
                 if (intent.resolveActivity(view.context.packageManager) != null) {
                     view.context.startActivity(intent)
                 } else {
-                    Toast.makeText(view.context, "Произошла ошибка. Проверьте интернет-подключение", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(view.context, "An error has occurred. Check your internet connection", Toast.LENGTH_SHORT).show()
                 }
             }
         }
