@@ -14,7 +14,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="@string/articTitle"
-        android:textStyle="bold"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/desc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,31 +26,32 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/articleTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/author"
+        android:id="@+id/category"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:text="@string/author"
-        android:textStyle="bold"
+        android:text="@string/categ"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/desc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/articleTitleData" />
 
     <TextView
-        android:id="@+id/authorName"
+        android:id="@+id/catName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/author"
+        app:layout_constraintStart_toEndOf="@+id/category"
         app:layout_constraintTop_toBottomOf="@+id/articleTitleData" />
 
     <TextView
@@ -60,9 +61,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/description"
-        android:textStyle="bold"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authorName" />
+        app:layout_constraintTop_toBottomOf="@+id/catName" />
 
     <TextView
         android:id="@+id/description"
@@ -75,5 +76,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/desc"
-        app:layout_constraintTop_toBottomOf="@+id/authorName" />
+        app:layout_constraintTop_toBottomOf="@+id/catName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
