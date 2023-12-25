@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="#61BA85FB">
+    android:background="#43BA85FB">
 
     <TextView
         android:id="@+id/articleTitle"
@@ -73,6 +73,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/link"
         app:layout_constraintTop_toBottomOf="@+id/catName" />
