@@ -1,7 +1,6 @@
 package com.example.android_laba3
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import android.content.Intent.CATEGORY_BROWSABLE
@@ -11,11 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONArray
 import org.json.JSONObject
-import java.security.AccessController.getContext
+import java.lang.Math.min
 
 class myAdapter(var data: JSONObject?): RecyclerView.Adapter<myAdapter.MyViewHolder>() {
     @SuppressLint("QueryPermissionsNeeded")
@@ -63,7 +61,11 @@ class myAdapter(var data: JSONObject?): RecyclerView.Adapter<myAdapter.MyViewHol
     fun updateData(newData: JSONObject?) { data = newData }
 
     fun stringToNotNull(smth: String?): String {
-        return if (smth != "null") smth!!
+        val len = smth?.length?:0
+        return if (smth != "null" && smth != null) {
+            val target_string = smth.substring(0, min(len, 300))
+            if (target_string.length == 300) "$target_string..."
+            else target_string }
         else "-"
     }
 

@@ -58,6 +58,8 @@ class MainActivity: Activity() {
                 emptyListOfNews(null)
             } else {
                 emptyListOfNews(false)
+                myAdapter.updateData(null)
+                myAdapter.notifyDataSetChanged()
             }
         }, {
             error ->
