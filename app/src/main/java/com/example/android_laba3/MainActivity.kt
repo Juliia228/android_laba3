@@ -64,6 +64,8 @@ class MainActivity: Activity() {
         }, {
             error ->
             emptyListOfNews(false)
+            myAdapter.updateData(null)
+            myAdapter.notifyDataSetChanged()
             Toast.makeText(applicationContext, "Произошла ошибка. Проверьте интернет-подключение", Toast.LENGTH_SHORT).show()
         })
 
