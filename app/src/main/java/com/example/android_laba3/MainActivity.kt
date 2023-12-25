@@ -5,6 +5,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import com.android.volley.toolbox.Volley
 class MainActivity: Activity() {
     private val MY_API_KEY = "pub_3536723bcac7b54645c8af4e56dad660040f1"
     private lateinit var search: EditText
+    private lateinit var deleteReq: ImageView
     private lateinit var startSearch: ImageButton
     private lateinit var text: TextView
     private lateinit var myAdapter: myAdapter
@@ -32,6 +34,8 @@ class MainActivity: Activity() {
         recyclerView.adapter = myAdapter
 
         search = findViewById(R.id.search)
+        deleteReq = findViewById(R.id.clear)
+        deleteReq.setOnClickListener { search.setText("") }
         startSearch = findViewById(R.id.startSearch)
         startSearch.setOnClickListener {
             val text = search.text.toString()
