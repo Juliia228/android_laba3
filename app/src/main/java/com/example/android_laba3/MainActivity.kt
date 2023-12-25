@@ -13,7 +13,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 
 class MainActivity: Activity() {
-    private val MY_API_KEY = ""
+    private val MY_API_KEY = "pub_3536723bcac7b54645c8af4e56dad660040f1"
     private lateinit var search: EditText
     private lateinit var startSearch: ImageButton
     private lateinit var text: TextView
