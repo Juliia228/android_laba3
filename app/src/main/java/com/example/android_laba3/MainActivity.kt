@@ -19,11 +19,6 @@ class MainActivity: Activity() {
     private lateinit var text: TextView
     private lateinit var myAdapter: myAdapter
 
-//    class Article constructor(var title: String = "-",
-//                              var author: String = "-",
-//                              var description: String = "-",
-//                              var url: String = "")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
@@ -39,39 +34,38 @@ class MainActivity: Activity() {
         search = findViewById(R.id.search)
         startSearch = findViewById(R.id.startSearch)
         startSearch.setOnClickListener {
-            var success: Boolean
             val text = search.text.toString()
-            if (text != "") success = sendRequest(text)
+            if (text != "") {
+                sendRequest(text)
+            }
             else {
-                success = false
                 Toast.makeText(applicationContext, "Please enter a topic or keyword", Toast.LENGTH_SHORT).show()
             }
-            emptyListOfNews(!success)
         }
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun sendRequest(keyWords: String): Boolean {
-        var success = false
-
+    fun sendRequest(keyWords: String) {
         val myURL = "https://newsdata.io/api/1/news?apikey=$MY_API_KEY&q=$keyWords"
         val queue = Volley.newRequestQueue(this)
         val request = JsonObjectRequest(myURL, null, {
             response ->
-            success = (response.getString("status") == "success") &&
+            val success = (response.getString("status") == "success") &&
                     response.getInt("totalResults") != 0
             if (success) {
                 myAdapter.updateData(response)
+                myAdapter.notifyDataSetChanged()
                 emptyListOfNews(null)
+            } else {
+                emptyListOfNews(false)
             }
         }, {
             error ->
+            emptyListOfNews(false)
             Toast.makeText(applicationContext, "Произошла ошибка. Проверьте интернет-подключение", Toast.LENGTH_SHORT).show()
         })
 
         queue.add(request)
-
-        return success
     }
 
     fun emptyListOfNews(flag: Boolean? = null) {
